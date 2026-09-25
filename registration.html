@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration Form</title>
+    <script src="clientRegistrations.js" defer></script><script src="js05.js" defer></script>
+	<script src="lightbox_data.js" defer></script>
+	<script src="js05.js" defer></script>
+	 <script src="validateForm.js" defer></script>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background: linear-gradient(-45deg, #3a1c71, #d76d77, #ffaf7b, #1e3c72); background-size: 400% 400%; animation: gradientBG 12s infinite ease-in-out;">
+    <style>
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 0% 75%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+
+    <h1>Client Registration Form</h1>
+    <form id="registrationForm">
+        <label for="preferredName">Preferred Name:</label>
+        <input type="text" id="preferredName" name="preferredName" required><br><br>
+
+        <label for="fullNames">Client Full Names as on ID:</label>
+        <input type="text" id="fullNames" name="fullNames" required><br><br>
+
+        <label for="surname">Surname:</label>
+        <input type="text" id="surname" name="surname" required><br><br>
+
+        <label for="birthDate">Birth Date:</label>
+        <select id="birthDay" name="birthDay" required>
+            <option value="">Day</option>
+            <script>
+                for (let i = 1; i <= 31; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+        <select id="birthMonth" name="birthMonth" required>
+            <option value="">Month</option>
+            <script>
+                const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                months.forEach((month, index) => {
+                    document.write(`<option value="${index + 1}">${month}</option>`);
+                });
+            </script>
+        </select>
+        <select id="birthYear" name="birthYear" required>
+            <option value="">Year</option>
+            <script>
+                for (let i = 2025; i >= 1925; i--) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select><br><br>
+
+        <label for="idNumber">ID Number:</label>
+        <input type="text" id="idNumber" name="idNumber" required><br><br>
+
+        <label for="telephone">Telephone Work:</label>
+        <input type="tel" id="telephone" name="telephone" required><br><br>
+
+        <label for="cellphone">Cellphone Number:</label>
+        <input type="tel" id="cellphone" name="cellphone" required><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="homeAddress">Home Address:</label>
+        <textarea id="homeAddress" name="homeAddress" required></textarea><br><br>
+
+        <label for="postalAddress">Postal Address:</label>
+        <textarea id="postalAddress" name="postalAddress" required></textarea><br><br>
+
+        <label>
+            <input type="checkbox" id="sameAddress" onclick="copyAddress()"> 
+            Postal address is the same as home address
+        </label><br><br>
+
+        <label for="referral">How did you hear about us?</label>
+        <select id="referral" name="referral" required>
+            <option value="">Select</option>
+            <option value="wordOfMouth">Word of Mouth</option>
+            <option value="internetSearch">Internet Search</option>
+            <option value="advertising">Advertising</option>
+        </select><br><br>
+
+        <label for="cardName">Name on Credit Card:</label>
+        <input type="text" id="cardName" name="cardName" required><br><br>
+
+        <label for="cardType">Credit Card Type:</label>
+        <select id="cardType" name="cardType" required>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+        </select><br><br>
+
+        <label for="cardNumber">Credit Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" required pattern="\d{16}"><br><br>
+
+        <label for="expiryMonth">Expiration Month:</label>
+        <select id="expiryMonth" name="expiryMonth" required>
+            <option value="">Month</option>
+            <script>
+                for (let i = 1; i <= 12; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select>
+
+        <label for="expiryYear">Expiration Year:</label>
+        <select id="expiryYear" name="expiryYear" required>
+            <option value="">Year</option>
+            <script>
+                for (let i = 2025; i <= 2030; i++) {
+                    document.write(`<option value="${i}">${i}</option>`);
+                }
+            </script>
+        </select><br><br>
+
+        <label for="cvc">CVC Number:</label>
+        <input type="text" id="cvc" name="cvc" required pattern="\d{3}"><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br><br>
+
+        <!-- Submit Button -->
+        <input type="submit" id="submitButton" value="Submit">
+    </form>
+
+    <div id="displayData" style="display:none; border: 1px solid black; padding: 10px; margin-top: 20px;">
+        <h2>Entered Details:</h2>
+        <p id="userData"></p>
+    </div>
+</body>
+</html>
