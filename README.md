@@ -11,7 +11,7 @@ A responsive hardware and building materials business website developed using HT
  
 ### Registration Page
  
-![Registration ots/registration-page.png
+https://github.com/israel-Lebogo/JunctionStore-ResponsiveHardwareWebsite/blob/main/images/screenshots/registration-page.png
  
 ### Contact Page
  
