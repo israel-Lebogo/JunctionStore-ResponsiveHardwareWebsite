@@ -18,3 +18,5 @@ https://github.com/israel-Lebogo/JunctionStore-ResponsiveHardwareWebsite/blob/ma
 https://github.com/israel-Lebogo/JunctionStore-ResponsiveHardwareWebsite/blob/main/images/screenshots/Contact%20us%20page.png
 
 ### About us Page
+
+https://github.com/israel-Lebogo/JunctionStore-ResponsiveHardwareWebsite/blob/main/images/screenshots/About%20us%20page.png
